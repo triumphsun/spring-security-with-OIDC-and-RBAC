@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+        layout:decorator="layouts/basic-layout">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${auth}">Login</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <h1>Sign In</h1>
+    <form method="post" th:action="@{/login}">
+        <label for="email">Email</label><br/>
+        <input type="email" id="email" value="example.001@gmail.com" size="50"/><br/><br/>
+        <label for="password">Password</label><br/>
+        <input type="password" id="password" size="50"/><br/>
+        <br/>
+        <input type="submit" value="Sign In"/>
+        <input type="reset" value="Clear"/>
+    </form>
+    <br/><br/>
+    <a href="">Login with my google account.</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+        layout:decorator="layouts/basic-layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <h1>Welcome</h1>
+    <a href="/login" th:href="@{/login}">Sign In</a>
+</div>
+</body>
+</html>

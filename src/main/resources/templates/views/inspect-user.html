@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="layouts/basic-layout">
+<head>
+    <meta charset="UTF-8">
+    <title>User Details</title>
+    <style type="text/css">
+        td {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div layout:fragment="content">
+        <h1>User Details</h1>
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <td>Email</td>
+                <td><b th:text="${account?.email}"></b></td>
+            </tr>
+            <tr>
+                <td>Created At</td>
+                <td th:text="${account?.createdAt}"></td>
+            </tr>
+            <tr>
+                <td>Roles</td>
+                <td>
+                    <ul th:each="role: ${account?.roles}">
+                        <li th:text="${role}"></li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
