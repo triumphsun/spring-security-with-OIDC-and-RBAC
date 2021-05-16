@@ -37,6 +37,10 @@ public class AccountEntity {
         return this.email;
     }
 
+    public String getPassword() {
+        return this.password;
+    }
+
     public Date getCreatedAt(){
         return this.createdAt;
     }
