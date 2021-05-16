@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.security.RolesAllowed;
 import java.text.SimpleDateFormat;
 import java.util.Optional;
 
@@ -20,6 +21,7 @@ public class AccountController {
 
     private SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss Z");
 
+    @RolesAllowed("ROLE_ADMIN")
     @RequestMapping(method = {RequestMethod.GET}, value = "/inspect/{email}")
     public ModelAndView inspect(@PathVariable("email") String email){
         ModelAndView mnv = new ModelAndView();
