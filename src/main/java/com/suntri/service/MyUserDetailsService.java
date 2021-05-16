@@ -26,7 +26,14 @@ public class MyUserDetailsService implements UserDetailsService {
                     .builder()
                     .username(username)
                     .password(entity.getPassword())
-                    .authorities("Admin")
+                    .authorities(
+                        entity
+                            .getRoles()
+                            .stream()
+                            .map(role -> String.format("ROLE_%s", role.getName().toUpperCase()))
+                            .distinct()
+                            .toArray(String[]::new)
+                    )
                     .build();
         }
         throw new UsernameNotFoundException(String.format("Email: %s not found.", username));

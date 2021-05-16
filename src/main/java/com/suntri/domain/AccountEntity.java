@@ -21,7 +21,7 @@ public class AccountEntity {
     @Column
     private String password;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
         name = "account_role",
         joinColumns = { @JoinColumn(name="role_id") },
