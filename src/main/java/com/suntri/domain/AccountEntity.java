@@ -21,11 +21,11 @@ public class AccountEntity {
     @Column
     private String password;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
         name = "account_role",
-        joinColumns = { @JoinColumn(name="role_id") },
-        inverseJoinColumns = { @JoinColumn(name="user_id") }
+        joinColumns = { @JoinColumn(name="account_id", referencedColumnName = "id") },
+        inverseJoinColumns = { @JoinColumn(name="role_id", referencedColumnName = "id") }
     )
     private Set<RoleEntity> roles;
 
