@@ -11,6 +11,10 @@
 <div layout:fragment="content">
     <h1>Welcome</h1>
     <a href="/login" th:href="@{/login}">Sign In</a>
+    <a href="/logout" th:href="@{/logout}">Sign Out</a>
+    <form th:action="@{/logout}" action="/logout" method="post">
+        <input type="submit" value="Logout"/>
+    </form>
 </div>
 </body>
 </html>

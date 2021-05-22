@@ -1,5 +1,7 @@
 server:
   port: 8080
+  session:
+    tracking-modes: 'cookie'
 
 spring:
   main:
@@ -16,3 +18,7 @@ spring:
     console:
       enabled: true
       path: /h2-console
+
+my:
+  jwt:
+    key: abcdefghijklmnopqrstuvwxyz
